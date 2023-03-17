@@ -10,7 +10,7 @@
 
   ## Installation
 
-  Npm i, Expressjs, fs.
+  npm i, mysql2, console.table, inquirer.
 
   ## Usage
 
