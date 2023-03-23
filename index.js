@@ -29,6 +29,18 @@ const questions = () => {
         addEmployee();
     } else (data.options === 'Update an employee role'); {
         updateRole()
+    } else {
+        db.end()
     }
 }))
 }
+
+getAllDepartments() {
+    db.query ('SELECT id,name FROM department', (error, data) => {
+        if (error) {
+            return error;
+        } else {
+            console.table(data);
+        }
+    })
+};
