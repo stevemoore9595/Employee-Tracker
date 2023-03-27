@@ -17,7 +17,7 @@ const questions = () => {
     })
         .then((data => {
             if (data.options === 'View all departments') {
-                 getAllDepartments();
+                getAllDepartments();
             } else if (data.options === 'View all roles') {
                 getAllRoles();
             } else if (data.options === 'View all employees') {
@@ -98,7 +98,7 @@ function addRole() {
             message: 'Which department does the role belong to?',
             choices: 'departments'
         }
-    ]) .then(data => {
+    ]).then(data => {
         db.query('INSERT INTO role (title, salary, department_id) VALUES (?,?,?)', [role, salary, department_name], (error, data) => {
             if (error) {
                 return error;
@@ -109,13 +109,48 @@ function addRole() {
     })
 }
 function addEmployee() {
-    return inquirer.prompt(addEmployee)
+    inquirer.prompt([
+        {
+            type: 'input',
+            message: 'Enter new employee first name',
+            name: 'first_name'
+        },
+        {
+            type: 'input',
+            message: 'Enter new employee last name',
+            name: 'last_name'
+        },
+        {
+            type: 'list',
+            message: 'Add employee role',
+            name: 'role',
+            choices: ['HR Specialist', 'Accountant', 'Customer Service Agent', 'Social Media Agent', 'Junior software Developer']
+        }
+    ])
         .then((data) => {
-            console.table(data);
+            db.query('INSERT INTO employee (first_name, last_name, role_id) VALUES (?,?,?)', [first_name, last_name, role_id], (error, data) => {
+                if (error) {
+                    return error;
+                } else {
+                    console.log('Employee successfully added');
+                }
+            })
         })
 }
 function updateRole() {
-    return inquirer.prompt(updateRole)
+    inquirer.prompt(
+        {
+            type: 'list',
+            message: 'Choose employee name',
+            name: 'employeeName',
+            choices: 
+        }
+        {
+            type: 'list',
+            message: 'Choose a role to assign to the employee',
+            name: 'roleUpdate',
+            choices: ['HR Specialist', 'Accountant', 'Customer Service Agent', 'Social Media Agent', 'Junior software Developer']
+        })
         .then((data) => {
             console.table(data);
         })
