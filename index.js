@@ -143,8 +143,8 @@ function updateRole() {
             type: 'list',
             message: 'Choose employee name',
             name: 'employeeName',
-            choices: 
-        }
+            choices: ['Merry Giron', 'Jonathan Hansen', 'Carlos Acevedo', 'Emily Richardson', 'Jamie Adams']
+        },
         {
             type: 'list',
             message: 'Choose a role to assign to the employee',
@@ -155,3 +155,5 @@ function updateRole() {
             console.table(data);
         })
 }
+
+questions();
