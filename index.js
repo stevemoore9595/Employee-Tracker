@@ -96,7 +96,7 @@ function addRole() {
             type: 'list',
             name: 'department_name',
             message: 'Which department does the role belong to?',
-            choices: 'departments'
+            choices: ['HR', 'Finance', 'Customer Service', 'Marketing', 'IT']
         }
     ]).then(data => {
         db.query('INSERT INTO role (title, salary, department_id) VALUES (?,?,?)', [role, salary, department_name], (error, data) => {
@@ -152,8 +152,7 @@ function updateRole() {
             choices: ['HR Specialist', 'Accountant', 'Customer Service Agent', 'Social Media Agent', 'Junior software Developer']
         })
         .then((data) => {
-            console.table(data);
+            console.log(data);
         })
 }
-
 questions();

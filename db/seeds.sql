@@ -7,7 +7,7 @@ VALUES ('HR'),
 ('Marketing'),
 ('IT');
 
-INSERT INTO roles (title, salary, department_id) 
+INSERT INTO role (title, salary, department_id) 
 VALUES ('HR Specialist', 70000, 1),
 ('Accountant', 60000, 2),
 ('Customer Service Agent', 45000, 3),

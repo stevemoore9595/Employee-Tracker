@@ -26,7 +26,7 @@
 
   ## Walkthrough Video
   
-  Click the following link to access the walkthrough video: 
+  Click the following link to access the walkthrough video: https://watch.screencastify.com/v/NE7WRAuWyAAeVztDr6Qa
 
   ## Questions
 
